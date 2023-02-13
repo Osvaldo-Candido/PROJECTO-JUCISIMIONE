@@ -1,0 +1,364 @@
+/*ESTERLIZANDO O PLANO DE PREGADORES*/
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+.tabela-planificao {
+    background: #fff;
+    margin-top: 120px;
+    margin-bottom: 30px;
+}
+
+.configuracoes-planos{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+    margin: 0 auto -25px auto;
+    background: #fff;
+    box-shadow: 2px 2px 12px rgba(0,0,0,.2) ;
+    border-radius: 10px;
+    padding: 10px;
+}
+/*PROGRAMA TRIMESTRAL LITURGISTA E PREGADORES*/
+.programa-trimestral {
+    width: 80%;
+}
+.show {
+    width: 60%;
+}
+.cabecalho-plano {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    background: #fff;
+    box-shadow: 2px 2px 12px rgba(0,0,0,.2) ;
+}
+
+.campo-pesquisa form{
+    margin-left: 20px;
+}
+.campo-pesquisa .pesq{
+    display: flex; 
+    flex-direction: column;
+}
+.campo-pesquisa .pesqu input{
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 3px 4px;
+}
+.campo-pesquisa .pesqu input:focus{
+    outline: none;
+}
+.add-plano a {
+    display: flex;
+    background: #168FD6;
+    color: #fff;
+    font-family: 'Courier New', Courier, monospace;
+    justify-content: space-between;
+    align-items: center;
+    padding: 3px 4px;
+    border-radius: 5px;
+
+}
+/*ESTERLIZANDO ADICIONAR PLANO*/
+.caixa-informacao .info textarea {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 100%;
+    padding: 3px;
+}
+.caixa-informacao .info textarea:focus{
+    outline: none;
+}
+/*TABELA DE ACTIVIDADES PLANIFICADAS*/
+.actividades {
+    margin-top: 120px;
+    margin-bottom: 30px;
+}
+.tabela-actividades {
+    width: 95%;
+    margin: 0 auto 0 auto;
+    background: #fff;
+    box-shadow: 2px 2px 12px rgba(0,0,0,.2);
+}
+
+
+/*---  ---*/
+.configuracoes-actividades {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #fff;
+    width: 100%;
+    box-shadow: 2px 2px 12px rgba(0,0,0,.2);
+    margin-top: 20px;
+    margin-bottom: 10px;
+    padding: 5px;
+}
+.tabela-actividades .titulo-actividade {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: 300;
+    font-size: 1.5em;
+    margin-right: 20px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.tabela-actividades .titulo-actividade p {
+    border-bottom: 2px solid #039578;
+    margin-right: 10px;
+}
+.tabela-actividades table thead tr {
+    background: linear-gradient(135deg, #A65EF9, #D76BEB);
+}
+/*ESTATÍSTICA DE MEMBROS*/
+.itens-estatistica {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-gap:20px;
+    width: 70%;
+    margin: 10px auto 30px auto;
+
+}
+.itens-estatistica .iten {
+    display: flex;
+    background: #fff;
+    border-left: 5px solid #A65EF9;
+    box-shadow: 0 0 20px rgba(0,0,0,.2);
+}
+.itens-estatistica .iten span {
+    font-family: 'Courier New', Courier, monospace;
+    color: #323232;
+    font-size: 1em;
+    text-align: left;
+
+}
+/*ALBUM DE FOTOGRAFIAS*/
+.container-imagens{
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-areas: 
+    "container-search"
+    "container-2";
+    min-height: 100vh;
+    position: fixed;
+    background: #fff;
+    box-shadow: 2px 2px 12px rgba(0,0,0,.2);
+    width: 100%;
+    padding: 40px 20px;
+    margin: 120px auto;
+   overflow-y: scroll;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    bottom: 0px; 
+   
+}
+.container-search {
+    grid-area:container-search;
+    position: fixed;
+    background: #fff;
+    width: 100%;
+    margin: -40px auto 10px -20px;
+    padding: 0px 0;
+    z-index: 1;
+}
+.search-box{
+    position: relative;
+    height: 42px;
+    max-width: 400px;
+    background: green;
+    margin: 0 auto;
+    border-radius: 6px;
+    margin-top: 10px;
+  
+}
+.container-2{
+    grid-area: container-2;
+    background: #fff;
+    margin-top: 60px;
+ 
+}
+.search-box input{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    outline: none;
+    border: 2px solid #ccc;
+    background-color: #fafbfc;
+    color: #999;
+    padding: 0 15px 0 45px;
+    font-size: 16px;
+    border-radius: 6px;
+}
+.search-box img {
+    position: absolute;
+    z-index: 2;
+    top:50%;
+    left: 15px;
+    transform: translateY(-50%);
+}
+.container-imagens .imagem-box {
+    width: 300px;
+    height: 210px;
+    margin-top: 40px;
+    border-radius: 6px;
+    overflow: hidden;
+    position: relative;
+    margin: 8px;
+}
+.container-imagens .imagem-box img{
+    height: 100%;
+    width: 100%;
+    border-radius: 6px;
+    transition: transform 0.2s linear;
+   object-fit: cover;
+   background-size: cover;
+   position: relative;
+}
+.imagem-box:hover img {
+    transform: scale(1.05);
+}
+.imagem-box  h6 {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    color: #fff;
+    font-weight: 600;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    font-size: 17px;
+    text-transform: capitalize;
+}
+
+.container-imagens .imagens {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    position: relative;
+}
+/*ADICIONAR FOTO*/
+.add-imagem{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #008BD2;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    z-index: -1;
+    box-shadow:2px 2px 12px rgba(0,0,0,.2);
+    margin-left: 100px;
+    margin-top: -40px;
+    transition: transform .2s linear;
+
+}
+.add-imagem:hover{
+    transform: scale(1.1);
+    cursor: pointer;
+}
+.accoes {
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    top: 180px;
+    left: 10px;
+
+}
+
+.accoes a:nth-child(1){
+    margin-right: 13px;
+}
+.accoes a {
+    background: rgba(0,0,0,.2);
+}
+/*MEXER PERFIL DO USUÁRIO*/
+.perfil-membro {
+    display: flex;
+    width: 80%;
+    height: 80vh;
+    margin: 120px auto 30px auto;
+    background: #fff;
+    box-shadow:2px 2px 12px rgba(0,0,0,.2);
+    border-radius: 10px;
+    overflow: hidden;
+}
+.dados-pessoais {
+    display: flex;
+    justify-content: center;
+    width: 50%;
+    background: linear-gradient(135deg,#008BD2,#A178ED);
+}
+.dados-pessoais ul li{
+    font-family: 'Inter',sans-serif;
+    color: #fff;
+    font-size: 1.2em;
+}
+.dados-pessoais ul{
+    margin-top: 20px;
+}
+.historial {
+    margin-left: 40px;
+    width: 50%;
+    overflow: auto;
+
+}
+.historial::-webkit-scrollbar{
+    width: 8px;
+    height: 8px;
+}
+.historial::-webkit-scrollbar-thumb{
+    border-radius: 8px;
+    background-color: #0004;
+    visibility: hidden;
+}
+.historial:hover::-webkit-scrollbar-thumb{
+    visibility: visible;
+}
+.historial p {
+    font-family: 'Inter',sans-serif;
+    line-height: 35px;
+}
+ul .imagem-perfil {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+ul .imagem-perfil img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 2px solid #fff;
+}
+.dados-pessoais ul li{
+    text-align: center;
+}
+.dados-pessoais ul li:nth-child(2)
+{
+    font-size: 22px;
+    margin-top: 10px;
+}
+.dados-pessoais ul li:nth-child(3)
+{
+    font-size: 18px
+}
+.historial h6 {
+    font-family: 'Inter',sans-serif;
+    font-size: 25px;
+    color: #323232;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+.historial h6::after {
+    content: '';
+    width: 5rem;
+    height: 0.3em;
+    background-color: #6C63FF;
+    margin: 0 auto;
+    display: block;
+    position: absolute;
+    border-radius: 10px;
+}

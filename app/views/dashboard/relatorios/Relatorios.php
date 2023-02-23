@@ -1,59 +1,107 @@
 
-        <div class="identificacao">
-                <p>PAINEL ADMINISTRATIVO JUCIEIA-SIMIONE</p>
-                <img src="<?=DIRIMG?>contacts.svg" alt="">
-        </div>
+ 
         <div class="itens-estatistica">
+            <h1 class="titulo-geral">Quadro de estatísticas geral de Membros</h1>
+            <div class="dashboard-estatistica">
             <div class="iten">
-                <img src="<?=DIRIMG?>contacts.svg" alt="">
-                <span>Adolecentens 100</span>
-                <p>MF 78| F 22</p>
+                <div class="left">
+                <img src="<?=DIRIMG?>plus_+.svg" alt="">
+                <h3>Crianças</h3>
             </div>
-            <div class="iten i1">
-                <img src="<?=DIRIMG?>contacts.svg" alt="">
-                <span>Adolecentens 100</span>
-                <p>MF 78| F 22</p>
+            <div class="rigth">
+                <h1> 100</h1>
+                <small class="text-muted">MF 78|</small> 
+                <small class="text-muted">F 22</small> 
             </div>
-            <div class="iten i2">
-                <img src="<?=DIRIMG?>contacts.svg" alt="">
-                <span>Adolecentens 100</span>
-                <p>MF 78| F 22</p>
-
             </div>
-            <div class="iten i3">
-                <img src="<?=DIRIMG?>contacts.svg" alt="">
-                <span>Adolecentens 100</span>
-                <p>MF 78| F 22</p>
+            <div class="iten">
+                <div class="left">
+                <img src="<?=DIRIMG?>plus_+.svg" alt="">
+                <h3>Adolecentes</h3>
             </div>
-            <div class="iten i4">
-                <img src="<?=DIRIMG?>contacts.svg" alt="">
-                <span>Adolecentens 100</span>
-                <p>MF 78| F 22</p>
+            <div class="rigth">
+                <h1> 100</h1>
+                <small class="text-muted">MF 78|</small> 
+                <small class="text-muted">F 22</small> 
             </div>
-            <div class="iten i5">
-            <img src="<?=DIRIMG?>contacts.svg" alt="">
-                <span>Adolecentens 100</span>
-                <p>MF 78| F 22</p>
             </div>
-            <div class="iten i6">
-            <img src="<?=DIRIMG?>contacts.svg" alt="">
-                <span>Adolecentens 100</span>
-                <p>MF 78| F 22</p>
+            <div class="iten">
+                <div class="left">
+                <img src="<?=DIRIMG?>plus_+.svg" alt="">
+                <h3>Jovens</h3>
             </div>
-            <div class="iten i7">
-            <img src="<?=DIRIMG?>contacts.svg" alt="">
-            <span>Adolecentens 100</span>
-                <p>MF 78| F 22</p>
+            <div class="rigth">
+                <h1> 100</h1>
+                <small class="text-muted">MF 78|</small> 
+                <small class="text-muted">F 22</small> 
             </div>
-            <div class="iten i8">
-            <img src="<?=DIRIMG?>contacts.svg" alt="">
-                <span>Adolecentens 100</span>
-                <p>MF 78| F 22</p>
             </div>
-            <div class="iten i9">
-            <img src="<?=DIRIMG?>contacts.svg" alt="">
-            <span>Adolecentens 100</span>
-                <p>MF 78| F 22</p>
+            <div class="iten">
+                <div class="left">
+                <img src="<?=DIRIMG?>plus_+.svg" alt="">
+                <h3>Adultos</h3>
+            </div>
+            <div class="rigth">
+                <h1> 100</h1>
+                <small class="text-muted">MF 78|</small> 
+                <small class="text-muted">F 22</small> 
+            </div>
+            </div>
+            <div class="iten">
+                <div class="left">
+                <img src="<?=DIRIMG?>plus_+.svg" alt="">
+                <h3>Activos</h3>
+            </div>
+            <div class="rigth">
+                <h1> 100</h1>
+                <small class="text-muted">MF 78|</small> 
+                <small class="text-muted">F 22</small> 
+            </div>
+            </div>
+            <div class="iten">
+                <div class="left">
+                <img src="<?=DIRIMG?>plus_+.svg" alt="">
+                <h3>Viagem</h3>
+            </div>
+            <div class="rigth">
+                <h1> 100</h1>
+                <small class="text-muted">MF 78|</small> 
+                <small class="text-muted">F 22</small> 
+            </div>
+            </div>
+            <div class="iten">
+                <div class="left">
+                <img src="<?=DIRIMG?>plus_+.svg" alt="">
+                <h3>Falecidos</h3>
+            </div>
+            <div class="rigth">
+                <h1> 100</h1>
+                <small class="text-muted">MF 78|</small> 
+                <small class="text-muted">F 22</small> 
+            </div>
+            </div>
+            <div class="iten">
+                <div class="left">
+                <img src="<?=DIRIMG?>plus_+.svg" alt="">
+                <h3>Desistentes</h3>
+            </div>
+            <div class="rigth">
+                <h1> 100</h1>
+                <small class="text-muted">MF 78|</small> 
+                <small class="text-muted">F 22</small> 
+            </div>
+            </div>
+            <div class="iten">
+                <div class="left">
+                <img src="<?=DIRIMG?>plus_+.svg" alt="">
+                <h2>TOTAL</h2>
+            </div>
+            <div class="rigth">
+                <h1> 100</h1>
+                <small class="text-muted">MF 78|</small> 
+                <small class="text-muted">F 22</small> 
+            </div>
+            </div>
             </div>
         </div>
    

@@ -23,5 +23,19 @@ class RoutesViews{
             echo "O ficheiro não existe AQUI";
         }
     }
+    public function renderizarLogin($view,$dados = null )
+    {
+        $this->$dados = $dados;
+        $this->view = $view;
+
+        $ficheiro = DIRREQ."app/views/".$this->view.".php";
+        
+        if(file_exists($ficheiro))
+        {
+            require_once $ficheiro;
+        }else{
+            echo "O ficheiro não existe AQUI";
+        }
+    }
 
 }

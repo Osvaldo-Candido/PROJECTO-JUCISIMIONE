@@ -9,16 +9,18 @@
     <title>Document</title>
 </head>
 <body>
-    <div class="estrutura-dash">
         <header class="estrutura-menu">
-            <nav class="menu">
-                <a href="#" class="logo">JUC-IEIA</a>
-                <ul>
-                    <li><a class="active" href="#">Home</a></li>
-                    <li><a href="#">About</a></li>
-                    <li><a href="#">Contacts</a></li>
-                    <li><a href="#">Escala</a></li>
-                    <li><a href="#"><img class="img-perfil" src="<?=DIRIMG?>ochoa.jpg" alt=""></a></li>
-                </ul>
-            </nav>
+            <div class="menu">
+                <div class="logo">
+                    <h1>JUC<span class="warning">IEIA</span></h1>
+                   <button id="abrir-menu"><img src="<?=DIRIMG?>menu_27px.png" alt=""></button> 
+                </div>
+                <div class="perfil-usuario">
+                        <div class="detalhes">
+                            <p>Bem-vindo,<b>Ossan</b></p>
+                            <small class="text-muted">Admin</small>
+                        </div>
+                        <span><img src="<?=DIRIMG?>ochoa.jpg" alt=""></span>
+                </div>  
+            </div>
         </header>

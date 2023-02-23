@@ -1,26 +1,90 @@
 /*ESTERLIZANDO O PLANO DE PREGADORES*/
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
-.tabela-planificao {
-    background: #fff;
-    margin-top: 120px;
-    margin-bottom: 30px;
-}
 
+:root{
+    --color-primary: #7380ec;
+    --color-danger: #ff7782;
+    --color-sucess: #41f1b6;
+    --color-warning: #ffbb55;
+    --color-white: #fff;
+    --color-info-dark: #7d8da1;
+    --color-info-light: #dce1eb;
+    --color-dark: #363949;
+    --color-light: rgba(132,139,200,0.18);
+    --color-primary-variant: #111e88;
+    --color-dark-variant: #677483;
+    --color-background: #f6f6f9;
+
+    --card-border-radius: 2rem;
+    --border-radius-1: 0.4rem;
+    --border-radius-2: 0.8rem;
+    --border-radius-3: 1.2rem;
+
+    --card-padding: 1.8rem;
+    --box-shadow: 0 2rem 3rem var(--color-light);
+}
+/*=====CONFIGURANDO A TABELA DE ESCLALAS ======*/
+.tabela-planificao {
+    width: 95vw;
+    height: 85vh;
+    background: #fff;
+    margin: 85px auto 30px auto;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    overflow: hidden;
+    backdrop-filter: blur(7px);
+    box-shadow: var(--box-shadow);
+}
+.tabela-planificao .anotacao {
+    background: var(--color-sucess);
+    color: #fff;
+    text-align: center;
+}
+.tabela-planificao table {
+    width: 100%;
+    margin: auto;
+}
+.tabela-planificao .tabela-escala {
+    width: 98%;
+    max-height: calc(89% - 2rem);
+    margin: 1rem auto 1rem auto;
+    overflow: auto;
+}
+.tabela-planificao .tabela-escala::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+.tabela-planificao .tabela-escala::-webkit-scrollbar-thumb {
+    border-radius: 6px;
+    background: #0004;
+    visibility: hidden;
+}
+.tabela-planificao .tabela-escala:hover::-webkit-scrollbar-thumb{
+    visibility: visible;
+}
+.tabela-planificao table thead th{
+    position: sticky;
+    left: 0;
+    top: 0;
+   text-align: left;
+   background: #0084FF;
+   color: #fff;
+}
 .configuracoes-planos{
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 80%;
-    margin: 0 auto -25px auto;
+    height: 10%;
+    width: 100%;
+    margin: 0 auto 0 auto;
     background: #fff;
-    box-shadow: 2px 2px 12px rgba(0,0,0,.2) ;
     border-radius: 10px;
-    padding: 10px;
+   
 }
-/*PROGRAMA TRIMESTRAL LITURGISTA E PREGADORES*/
-.programa-trimestral {
-    width: 80%;
-}
+/*====PROGRAMA TRIMESTRAL LITURGISTA E PREGADORES====*/
 .show {
     width: 60%;
 }
@@ -46,6 +110,11 @@
     border-radius: 5px;
     padding: 3px 4px;
 }
+.campo-pesquisa input[type="submit"]{
+    padding: 5px;
+    background: #B2B2B2;
+    color: #444B54;
+}
 .campo-pesquisa .pesqu input:focus{
     outline: none;
 }
@@ -70,69 +139,166 @@
 .caixa-informacao .info textarea:focus{
     outline: none;
 }
-/*TABELA DE ACTIVIDADES PLANIFICADAS*/
+/*=======TABELA DE ACTIVIDADES PLANIFICADAS========*/
 .actividades {
-    margin-top: 120px;
-    margin-bottom: 30px;
-}
-.tabela-actividades {
     width: 95%;
-    margin: 0 auto 0 auto;
-    background: #fff;
-    box-shadow: 2px 2px 12px rgba(0,0,0,.2);
+    height: 88vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: 70px auto 30px auto;
+    background: #fafbfc;
+    backdrop-filter: blur(7px);
+    overflow: hidden;
 }
 
-
-/*---  ---*/
 .configuracoes-actividades {
     display: flex;
-    justify-content: center;
     align-items: center;
-    background: #fff;
+    background: #fafbfc;
     width: 100%;
-    box-shadow: 2px 2px 12px rgba(0,0,0,.2);
-    margin-top: 20px;
-    margin-bottom: 10px;
-    padding: 5px;
+    height: 10%;
+    padding: 5px 30px;
 }
-.tabela-actividades .titulo-actividade {
+.tabela-actividades {
+    height: 80vh;
+    overflow: auto;
+    min-height: calc(89% - 2rem);
+    width: 95%;
+    margin: 0 auto 0 auto;
+}
+.dashboard-actividades-central .list-dash {
+    color: var(--color-info-dark);
+    margin-left: 1.5rem;
+    margin-bottom: -1rem;
+}
+.actividades .lista {
+    color: var(--color-info-dark);
+    margin-bottom: 1rem;
+    margin-left: 2rem;
+}
+.tabela-actividades::-webkit-scrollbar{
+    width: 8px;
+    height: 8px;
+}
+.tabela-actividades::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background: #0004;
+    visibility: hidden;
+
+}
+.tabela-actividades:hover::-webkit-scrollbar-thumb{
+    visibility: visible;
+}
+.tabela-actividades table {
+    width: 100%
+}
+.tabela-actividades table thead th {
+    position: sticky;
+    top: 0;
+    left: 0;
+    background: #1A6ED8;
+    color: #fff;
+}
+.actividades .dashboard {
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap: 2rem;
+    padding: 2rem 3rem;
+}
+.actividades .planificadas
+{
+   display: flex;
+   align-items: center;
+   gap: 2rem;
+   background: var(--color-white);
+   box-shadow: var(--box-shadow);
+   padding: var(--card-padding);
+   border-radius: var(--card-border-radius);
+   width: 18rem;
+}
+.dashboard-actividades-central .dashboard span img {
+
+    padding: 0.5rem;
+    border-radius: 50%;
+    width: 40px;
+    width: 40px;
+    background: var(--color-primary);
+    margin-bottom: 1rem;
+}
+.dashboard-actividades-central .dashboard .sucesso img {
+    background: var(--color-sucess);
+}
+.dashboard-actividades-central .dashboard .alerta img {
+    background: var(--color-warning);
+}
+.dashboard-actividades-central .dashboard .total img {
+    background: #24292F;
+}
+.box-procurar-2 {
+    border: 2px solid #ccc;
+    position: relative;
+    width: 220px;
+    height: 30px;
     display: flex;
-    justify-content: center;
-    align-items: center;
-    font-family: 'Courier New', Courier, monospace;
-    font-weight: 300;
-    font-size: 1.5em;
-    margin-right: 20px;
-    margin-top: 10px;
-    margin-bottom: 10px;
+    border-radius:8px;
+    margin-left: 10px;
+
 }
-.tabela-actividades .titulo-actividade p {
-    border-bottom: 2px solid #039578;
-    margin-right: 10px;
+.box-procurar-2 input {
+    width: 100%;
+    padding: 0 2rem;
+    border-radius: 8px;
 }
-.tabela-actividades table thead tr {
-    background: linear-gradient(135deg, #A65EF9, #D76BEB);
+.box-procurar-2 img{
+    position: absolute;
+    top: 20%;
+    padding: 0 0.5rem;
 }
 /*ESTATÍSTICA DE MEMBROS*/
 .itens-estatistica {
+    width: 90%;
+    gap:10px;
+    margin: 90px auto 30px auto;
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    overflow: hidden;
+}
+.dashboard-estatistica {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-gap:20px;
-    width: 70%;
-    margin: 10px auto 30px auto;
-
+    width: 90%;
+    margin: 10px auto 0 auto;
 }
-.itens-estatistica .iten {
+.itens-estatistica .titulo-geral {
+    text-align: center;
+}
+.itens-estatistica .iten img {
+   width: 42px;
+   height: 42px;
+   border-radius: 50%;
+   margin-bottom: 10px;
+   background: var(--color-sucess);
+   padding: .3rem;
+}
+.itens-estatistica .iten  {
     display: flex;
-    background: #fff;
-    border-left: 5px solid #A65EF9;
-    box-shadow: 0 0 20px rgba(0,0,0,.2);
-}
-.itens-estatistica .iten span {
-    font-family: 'Courier New', Courier, monospace;
+    align-items: center;
+    gap: 2rem;
+    width: 270px;
+    height: 150px;
+    font-family: poppins;
     color: #323232;
-    font-size: 1em;
     text-align: left;
+    box-shadow: 2px 2px 12px rgba(0,0,0,.2);
+    border-radius: var(--card-border-radius);
+    padding: var(--card-padding);
+    margin: 15px auto 0 auto;
 
 }
 /*ALBUM DE FOTOGRAFIAS*/
@@ -144,11 +310,10 @@
     "container-2";
     min-height: 100vh;
     position: fixed;
-    background: #fff;
-    box-shadow: 2px 2px 12px rgba(0,0,0,.2);
+    background: #fafbfc;
     width: 100%;
     padding: 40px 20px;
-    margin: 120px auto;
+    margin: 75px auto;
    overflow-y: scroll;
     top: 0px;
     left: 0px;
@@ -177,8 +342,9 @@
 }
 .container-2{
     grid-area: container-2;
-    background: #fff;
-    margin-top: 60px;
+    background: #fafbfc;
+    margin-top: 20px;
+    box-shadow: var(--box-shadow);
  
 }
 .search-box input{
@@ -278,12 +444,17 @@
 .perfil-membro {
     display: flex;
     width: 80%;
-    height: 80vh;
-    margin: 120px auto 30px auto;
+    min-height: 50vh;
+    margin: 80px auto 50px auto;
     background: #fff;
     box-shadow:2px 2px 12px rgba(0,0,0,.2);
     border-radius: 10px;
     overflow: hidden;
+    position: fixed;
+    top:0;
+    left: 0;
+    right: 0;
+    bottom: 0;
 }
 .dados-pessoais {
     display: flex;

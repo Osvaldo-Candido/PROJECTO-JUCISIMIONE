@@ -13,13 +13,15 @@ class Routes {
         $controller = $url[0];
 
         $routes = [
-            '' => 'HomeController',
+            '' => 'LoginController',
             'home' => 'HomeController',
             'user' => 'UserController',
             'sobre' => 'SobreController',
             'planos' => 'PlanosController',
             'actividades' => 'ActividadesController',
             'estatistica' => 'EstaticaController',
+            'financas' => 'FinancasController',
+            'login' => 'LoginController',
             'album' => 'AlbumController'
         ];
 
@@ -32,7 +34,7 @@ class Routes {
                     echo "O ficheiro não existe";
             }
         }else{
-            echo "A controller não existe";
+             return $routes['login'];
         }
     }
 }

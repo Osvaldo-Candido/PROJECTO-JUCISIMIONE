@@ -1,0 +1,90 @@
+CREATE TABLE membro (
+idMembro		INT AUTO_INCREMENT PRIMARY KEY,
+nome			varchar(250) NOT NULL,
+pai			varchar(250),
+mae			varchar(250),
+nascimento      	date NOT NULL,
+nacionalidade   	varchar(150) NOT NULL,
+provincia 		varchar(150) NOT NULL,
+municipio		varchar(200) NOT NULL,
+documento       	varchar(120) NOT NULL,
+numDocumento    	varchar(150) NOT NULL,
+sexo			varchar(100) NOT NULL,
+contacto		varchar(50) NOT NULL,
+estado			varchar(150) NOT NULL,
+batismo			date,
+local 			varchar(250),
+cargo			varchar(250),
+funcao			varchar(120),
+foto			varchar(250),
+categoria		varchar(250),
+email			varchar(200),
+senha			varchar(200),
+dataCriacao		date NOT NULL,
+dataEdicao		date,
+admin			int
+);
+CREATE TABLE formacoes(
+idFormacao		INT AUTO_INCREMENT PRIMARY KEY,
+nivel			varchar(150),
+instituicao		varchar(200),
+curso  			varchar(200),
+teologia		varchar(500),
+instituicaoTeologica		varchar(400),
+observarcao		text,
+dataCriacao		date NOT NULL,
+dataEdicao		date,
+admin			int,
+CONSTRAINT membro_a_formacao FOREIGN KEY (admin) REFERENCES membro(idMembro)  
+);
+CREATE TABLE actividades (
+idActividade	INT AUTO_INCREMENT PRIMARY KEY,
+nome			varchar(150) NOT NULL,
+responsavel		varchar(400) NOT NULL,
+objectivo		varchar(500) NOT NULL,
+data			date NOT NULL,
+lugar			varchar(300) NOT NULL,
+duracao			varchar(100) NOT NULL,
+observacao		text,
+estado			varchar(250),
+departamento		varchar(250),
+dataCriacao		date NOT NULL,
+dataEdicao		date,
+admin			int,
+CONSTRAINT membro_a_actividade FOREIGN KEY (admin) REFERENCES membro(idMembro)  
+);
+CREATE TABLE escala (
+idEscala		int AUTO_INCREMENT PRIMARY KEY,
+ministro		varchar(250) NOT NULL,
+liturgista		varchar(250) NOT NULL,
+suplenteMinistro	varchar(250) NOT NULL,
+suplenteLiturgista	varchar(250) NOT NULL,
+tipoACtividade		varchar(250) NOT NULL,
+textoBiblico		varchar(250) NOT NULL,
+departamento		varchar(250) NOT NULL,
+observacao		text,
+dataCriacao		date NOT NULL,
+dataEdicao		date,
+admin			int,
+CONSTRAINT membro_a_escala FOREIGN KEY (admin) REFERENCES membro(idMembro)  
+);
+CREATE TABLE galeria(
+idFoto			int AUTO_INCREMENT PRIMARY KEY,
+foto			varchar(250) NOT NULL,
+dataCriacao		date NOT NULL,
+dataEdicao		date,
+admin			int,
+CONSTRAINT membro_a_galeria FOREIGN KEY (admin) REFERENCES membro(idMembro)  
+);
+CREATE TABLE receitas(
+idReceita		int AUTO_INCREMENT PRIMARY KEY,
+tipoReceita		varchar(200),
+entrada			decimal,
+saida			decimal,
+departamento		varchar(200),
+dataCriacao		date NOT NULL,
+dataEdicao		date,
+admin			int,
+observacao		varchar(100),
+CONSTRAINT membro_a_receita FOREIGN KEY (admin) REFERENCES membro(idMembro)  
+);

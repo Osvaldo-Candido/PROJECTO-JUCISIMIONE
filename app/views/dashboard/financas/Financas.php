@@ -1,53 +1,23 @@
 <div class="registo-financeiro">
 <div class="configuracoes-planos">
             <div class="add-plano-fin">
-             <a href="<?=DIRPAGE?>planos/viewCadastrarPlano"><img src="<?=DIRIMG?>maestro.svg" alt="">Registar Receita</a>
+                Registar Receita
             </div>    
                 <div class="edicao-lista">
-                    <a href="#"><img src="<?=DIRIMG?>export_pdf_25px.png" alt=""></a>
-                    <a href="#"><img src="<?=DIRIMG?>print_25px.png" alt=""></a>
+                    <a href="<?=DIRPAGE?>financas\descarregarReceitasPdf"><img src="<?=DIRIMG?>export_pdf_25px.png" alt=""></a>
+                    <a href="<?=DIRPAGE?>financas\carregarReceitasPdf"><img src="<?=DIRIMG?>print_25px.png" alt=""></a>
                 </div>
                 <div class="campo-pesquisa">
-                    <form action="">
+                    <form id="pesquisarData">
                         <div class="pesqu">
-                            <input type="date">
-                            <input type="date">
+                            <input type="date" id="data-inicial">
+                            <input type="date" id="data-final">
                             <input type="submit" value="Pesquisar/Data">
                         </div>
                     </form>
                 </div>
 </div>
     <header class="financa-cabecalho">
-        <div class="fin-report">
-            <div class="left">
-                <img src="<?=DIRIMG?>cash_app.svg" alt="">
-                <h2>Total de Entradas</h2>
-                <small class="text-muted">Ano 2023</small>
-            </div>
-            <div class="rigth">
-                <h2>1.000.000 Kz</h2>
-            </div>
-        </div>
-        <div class="fin-report rep1">
-            <div class="left">
-                <img src="<?=DIRIMG?>cash_app.svg" alt="">
-                <h2>Total de Entradas</h2>
-                <small class="text-muted">Ano 2023</small>
-            </div>
-            <div class="rigth">
-                <h2>1.000.000 Kz</h2>
-            </div>
-        </div>
-        <div class="fin-report rep2">
-            <div class="left">
-                <img src="<?=DIRIMG?>cash_app.svg" alt="">
-                <h2>Total de Entradas</h2>
-                <small class="text-muted">Ano 2023</small>
-            </div>
-            <div class="rigth">
-                <h2>1.000.000 Kz</h2>
-            </div>
-        </div>
     </header>
 
     <div class="tabela-financas">
@@ -55,331 +25,73 @@
             <thead>
                 <tr>
                     <th>ID</th>
-                    <th>Data</th>
-                    <th>Tipo</th>
+                    <th>Tipo de Receita</th>
                     <th>Entrada</th>
                     <th>Saida</th>
                     <th>Total</th>
-                    <th>Registador</th>
+                    <th>Departamento</th>
+                    <th>Data de Criação</th>
+                    <th>Data de Edição</th>
+                    <th>Registador </th>
+                    <th>Acções </th>
                 </tr>
             </thead>
-            <tbody>
-                <tr>
-                    <td>1</td>
-                    <td>04/05/2023</td>
-                    <td>Oferta</td>
-                    <td>10.000Kz</td>
-                    <td>2000Kz</td>
-                    <td>8000Kz</td>
-                    <td>João Lucas Xavier</td>
-                </tr>
-                <tr>
-                    <td>1</td>
-                    <td>04/05/2023</td>
-                    <td>Oferta</td>
-                    <td>10.000Kz</td>
-                    <td>2000Kz</td>
-                    <td>8000Kz</td>
-                    <td>João Lucas Xavier</td>
-                </tr>
-                <tr>
-                    <td>1</td>
-                    <td>04/05/2023</td>
-                    <td>Oferta</td>
-                    <td>10.000Kz</td>
-                    <td>2000Kz</td>
-                    <td>8000Kz</td>
-                    <td>João Lucas Xavier</td>
-                </tr>
-                <tr>
-                    <td>1</td>
-                    <td>04/05/2023</td>
-                    <td>Oferta</td>
-                    <td>10.000Kz</td>
-                    <td>2000Kz</td>
-                    <td>8000Kz</td>
-                    <td>João Lucas Xavier</td>
-                </tr>
-                <tr>
-                    <td>1</td>
-                    <td>04/05/2023</td>
-                    <td>Oferta</td>
-                    <td>10.000Kz</td>
-                    <td>2000Kz</td>
-                    <td>8000Kz</td>
-                    <td>João Lucas Xavier</td>
-                </tr>
-                <tr>
-                    <td>1</td>
-                    <td>04/05/2023</td>
-                    <td>Oferta</td>
-                    <td>10.000Kz</td>
-                    <td>2000Kz</td>
-                    <td>8000Kz</td>
-                    <td>João Lucas Xavier</td>
-                </tr>
-                <tr>
-                    <td>1</td>
-                    <td>04/05/2023</td>
-                    <td>Oferta</td>
-                    <td>10.000Kz</td>
-                    <td>2000Kz</td>
-                    <td>8000Kz</td>
-                    <td>João Lucas Xavier</td>
-                </tr>
-                <tr>
-                    <td>1</td>
-                    <td>04/05/2023</td>
-                    <td>Oferta</td>
-                    <td>10.000Kz</td>
-                    <td>2000Kz</td>
-                    <td>8000Kz</td>
-                    <td>João Lucas Xavier</td>
-                </tr>
-                <tr>
-                    <td>1</td>
-                    <td>04/05/2023</td>
-                    <td>Oferta</td>
-                    <td>10.000Kz</td>
-                    <td>2000Kz</td>
-                    <td>8000Kz</td>
-                    <td>João Lucas Xavier</td>
-                </tr>
-                <tr>
-                    <td>1</td>
-                    <td>04/05/2023</td>
-                    <td>Oferta</td>
-                    <td>10.000Kz</td>
-                    <td>2000Kz</td>
-                    <td>8000Kz</td>
-                    <td>João Lucas Xavier</td>
-                </tr>
-                <tr>
-                    <td>1</td>
-                    <td>04/05/2023</td>
-                    <td>Oferta</td>
-                    <td>10.000Kz</td>
-                    <td>2000Kz</td>
-                    <td>8000Kz</td>
-                    <td>João Lucas Xavier</td>
-                </tr>
-                <tr>
-                    <td>1</td>
-                    <td>04/05/2023</td>
-                    <td>Oferta</td>
-                    <td>10.000Kz</td>
-                    <td>2000Kz</td>
-                    <td>8000Kz</td>
-                    <td>João Lucas Xavier</td>
-                </tr>
-                <tr>
-                    <td>1</td>
-                    <td>04/05/2023</td>
-                    <td>Oferta</td>
-                    <td>10.000Kz</td>
-                    <td>2000Kz</td>
-                    <td>8000Kz</td>
-                    <td>João Lucas Xavier</td>
-                </tr>
-                <tr>
-                    <td>1</td>
-                    <td>04/05/2023</td>
-                    <td>Oferta</td>
-                    <td>10.000Kz</td>
-                    <td>2000Kz</td>
-                    <td>8000Kz</td>
-                    <td>João Lucas Xavier</td>
-                </tr>
-                <tr>
-                    <td>1</td>
-                    <td>04/05/2023</td>
-                    <td>Oferta</td>
-                    <td>10.000Kz</td>
-                    <td>2000Kz</td>
-                    <td>8000Kz</td>
-                    <td>João Lucas Xavier</td>
-                </tr>
-                <tr>
-                    <td>1</td>
-                    <td>04/05/2023</td>
-                    <td>Oferta</td>
-                    <td>10.000Kz</td>
-                    <td>2000Kz</td>
-                    <td>8000Kz</td>
-                    <td>João Lucas Xavier</td>
-                </tr>
-                <tr>
-                    <td>1</td>
-                    <td>04/05/2023</td>
-                    <td>Oferta</td>
-                    <td>10.000Kz</td>
-                    <td>2000Kz</td>
-                    <td>8000Kz</td>
-                    <td>João Lucas Xavier</td>
-                </tr>
-                <tr>
-                    <td>1</td>
-                    <td>04/05/2023</td>
-                    <td>Oferta</td>
-                    <td>10.000Kz</td>
-                    <td>2000Kz</td>
-                    <td>8000Kz</td>
-                    <td>João Lucas Xavier</td>
-                </tr>
-                <tr>
-                    <td>1</td>
-                    <td>04/05/2023</td>
-                    <td>Oferta</td>
-                    <td>10.000Kz</td>
-                    <td>2000Kz</td>
-                    <td>8000Kz</td>
-                    <td>João Lucas Xavier</td>
-                </tr>
-                <tr>
-                    <td>1</td>
-                    <td>04/05/2023</td>
-                    <td>Oferta</td>
-                    <td>10.000Kz</td>
-                    <td>2000Kz</td>
-                    <td>8000Kz</td>
-                    <td>João Lucas Xavier</td>
-                </tr>
-                <tr>
-                    <td>1</td>
-                    <td>04/05/2023</td>
-                    <td>Oferta</td>
-                    <td>10.000Kz</td>
-                    <td>2000Kz</td>
-                    <td>8000Kz</td>
-                    <td>João Lucas Xavier</td>
-                </tr>
-                <tr>
-                    <td>1</td>
-                    <td>04/05/2023</td>
-                    <td>Oferta</td>
-                    <td>10.000Kz</td>
-                    <td>2000Kz</td>
-                    <td>8000Kz</td>
-                    <td>João Lucas Xavier</td>
-                </tr>
-                <tr>
-                    <td>1</td>
-                    <td>04/05/2023</td>
-                    <td>Oferta</td>
-                    <td>10.000Kz</td>
-                    <td>2000Kz</td>
-                    <td>8000Kz</td>
-                    <td>João Lucas Xavier</td>
-                </tr>
-                <tr>
-                    <td>1</td>
-                    <td>04/05/2023</td>
-                    <td>Oferta</td>
-                    <td>10.000Kz</td>
-                    <td>2000Kz</td>
-                    <td>8000Kz</td>
-                    <td>João Lucas Xavier</td>
-                </tr>
-                <tr>
-                    <td>1</td>
-                    <td>04/05/2023</td>
-                    <td>Oferta</td>
-                    <td>10.000Kz</td>
-                    <td>2000Kz</td>
-                    <td>8000Kz</td>
-                    <td>João Lucas Xavier</td>
-                </tr>
-                <tr>
-                    <td>1</td>
-                    <td>04/05/2023</td>
-                    <td>Oferta</td>
-                    <td>10.000Kz</td>
-                    <td>2000Kz</td>
-                    <td>8000Kz</td>
-                    <td>João Lucas Xavier</td>
-                </tr>
-                <tr>
-                    <td>1</td>
-                    <td>04/05/2023</td>
-                    <td>Oferta</td>
-                    <td>10.000Kz</td>
-                    <td>2000Kz</td>
-                    <td>8000Kz</td>
-                    <td>João Lucas Xavier</td>
-                </tr>
-                <tr>
-                    <td>1</td>
-                    <td>04/05/2023</td>
-                    <td>Oferta</td>
-                    <td>10.000Kz</td>
-                    <td>2000Kz</td>
-                    <td>8000Kz</td>
-                    <td>João Lucas Xavier</td>
-                </tr>
-                <tr>
-                    <td>1</td>
-                    <td>04/05/2023</td>
-                    <td>Oferta</td>
-                    <td>10.000Kz</td>
-                    <td>2000Kz</td>
-                    <td>8000Kz</td>
-                    <td>João Lucas Xavier</td>
-                </tr>
-                <tr>
-                    <td>1</td>
-                    <td>04/05/2023</td>
-                    <td>Oferta</td>
-                    <td>10.000Kz</td>
-                    <td>2000Kz</td>
-                    <td>8000Kz</td>
-                    <td>João Lucas Xavier</td>
-                </tr>
-                <tr>
-                    <td>1</td>
-                    <td>04/05/2023</td>
-                    <td>Oferta</td>
-                    <td>10.000Kz</td>
-                    <td>2000Kz</td>
-                    <td>8000Kz</td>
-                    <td>João Lucas Xavier</td>
-                </tr>
-                <tr>
-                    <td>1</td>
-                    <td>04/05/2023</td>
-                    <td>Oferta</td>
-                    <td>10.000Kz</td>
-                    <td>2000Kz</td>
-                    <td>8000Kz</td>
-                    <td>João Lucas Xavier</td>
-                </tr>
-                <tr>
-                    <td>1</td>
-                    <td>04/05/2023</td>
-                    <td>Oferta</td>
-                    <td>10.000Kz</td>
-                    <td>2000Kz</td>
-                    <td>8000Kz</td>
-                    <td>João Lucas Xavier</td>
-                </tr>
-                <tr>
-                    <td>1</td>
-                    <td>04/05/2023</td>
-                    <td>Oferta</td>
-                    <td>10.000Kz</td>
-                    <td>2000Kz</td>
-                    <td>8000Kz</td>
-                    <td>João Lucas Xavier</td>
-                </tr>
-                <tr>
-                    <td>1</td>
-                    <td>04/05/2023</td>
-                    <td>Oferta</td>
-                    <td>10.000Kz</td>
-                    <td>2000Kz</td>
-                    <td>8000Kz</td>
-                    <td>João Lucas Xavier</td>
-                </tr>
+            <tbody class="dados-financas">
+                
             </tbody>
         </table>
     </div>
-</div>ceiro
+</div>
+<div class="caixa-informacao" id="caixa-informacao">
+
+    <form id="formFinancas" class="formFinancas">
+    <div class="fechar-form-actividade">
+            X
+        </div>
+    <div class="erro-text">
+         <span>Erro ao cadastrar Planos</span>
+    </div>
+    <div class="info fase">
+        <label for="">Adicionar Receitas</label>
+    </div>
+    <div class="info">
+        <input type="hidden" placeholder="Insira o nome do ministro" name="id" id="id">
+    </div>
+    <div class="info">
+    <label for="">Tipo de Receita</label>
+        <select name="tipoReceita" id="tipoReceita">
+            <option value="Oferta">Oferta</option>
+            <option value="Dízimo">Dízimo</option>
+            <option value="Acção de Graça">Acção de Graça</option>
+            <option value="Oferta Especial">Oferta Especial</option>
+            <option value="Outro">Outro</option>
+        </select>
+    </div>
+    <div class="info">
+    <label for="">Departamento</label>
+        <select name="departamento" id="departamento">
+            <option value="Igreja Geral">Igreja Geral</option>
+            <option value="Sociedade de Senhoras">Sociedade de Senhoras</option>
+            <option value="Juventude">Juventude</option>
+            <option value="E. Bíblica Dominical">E.B.D</option>
+        </select>
+    </div>
+    <div class="info">
+        <label for="">Entrada</label>
+        <input type="text" placeholder="Insira a entrada" name="entrada" id="entrada">
+    </div>
+
+    <div class="info">
+        <label for="">Saida</label>
+        <input type="text" placeholder="Insira a saida" name="saida" id="saida">
+    </div>
+    <div class="info">
+        <label for="">Observação</label>
+       <textarea name="observacao" id="observacao" cols="30" rows="10"></textarea>
+    </div>
+        <div class="info">
+        <input type="submit" value="Cadastrar">
+        </div>
+    </form>   
+</div>
+<script src="<?=DIRJS?>financas.js"></script>

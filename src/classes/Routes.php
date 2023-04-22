@@ -27,9 +27,14 @@ class Routes {
 
         if(array_key_exists($controller, $routes))
         {
+        
             if(file_exists(DIRREQ.'app/controllers/'.$routes[$controller].'.php'))
-            {
+            { 
+              if(isset($_SESSION['nome']) && isset($_SESSION['cargo']) && isset($_SESSION['id_unico'])){
                     return $routes[$controller];
+                 }else{
+                 return $routes['login'];
+               }
             }else{
                     echo "O ficheiro não existe";
             }

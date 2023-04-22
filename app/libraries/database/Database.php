@@ -2,18 +2,15 @@
 
 namespace App\Libraries\Database;
 
-class Database {
+abstract class Database {
 
     public function conexao()
     {
-        $opcoes = [
-        
-        ];
 
         try {
-            $conn = new \PDO('mysql:host='.HOST.'; dbname='.DATABASE.';'.USER.'',''.PASSWORD);
+            $conn = new \PDO('mysql:host='.HOST.'; dbname='.DATABASE.';',''.USER.'',''.PASSWORD);
             return $conn;
-        } catch (\PDO $th) {
+        } catch (\PDOException $th) {
             print 'ERRO '.$th->getMessage();
         }
        

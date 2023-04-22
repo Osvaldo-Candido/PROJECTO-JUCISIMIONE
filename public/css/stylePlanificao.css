@@ -118,18 +118,57 @@
 .campo-pesquisa .pesqu input:focus{
     outline: none;
 }
-.add-plano a {
+.add-plano  {
     display: flex;
-    background: #168FD6;
-    color: #fff;
-    font-family: 'Courier New', Courier, monospace;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
-    padding: 3px 4px;
-    border-radius: 5px;
+    background: #0084FF;
+    padding: 5px;
+    border-radius: 6px;
+    color: #fff;
+    font-family: sans-serif;
+    margin-right: 10px;
 
 }
 /*ESTERLIZANDO ADICIONAR PLANO*/
+/*caixa informação actividades*/
+.formActividade{
+    width: 500px;
+    height: 300px;
+    padding: 1rem;
+  
+}
+/*=============================*/
+/*caixa para adicionar planos*/
+.formPlano{
+    width: 500px;
+    height: 300px;
+    padding: 1rem;
+}
+/*=============================*/
+/*caixa para adicionar receitas*/
+.formFinancas{
+    width: 500px;
+    height: 200px;
+    padding: 1rem;
+}
+/*============================*/
+.fechar-form-actividade {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: #0084FF;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+    position: absolute; 
+    right: -4px;
+    top: -5px;
+}
+.tabela-actividades .dado-none{ 
+    display: none;
+}  
 .caixa-informacao .info textarea {
     border: 1px solid #ccc;
     border-radius: 5px;
@@ -151,9 +190,20 @@
     margin: 70px auto 30px auto;
     background: #fafbfc;
     backdrop-filter: blur(7px);
-    overflow: hidden;
+    overflow: auto;
 }
-
+.actividades::-webkit-scrollbar{
+    width: 8px;
+    height: 8px;
+}
+.actividades::-webkit-scrollbar-thumb{
+    border-radius: 10px;
+    background-color: #0004;
+    visibility: hidden;
+}
+.actividades:hover::-webkit-scrollbar-thumb{
+    visibility: visible;
+}
 .configuracoes-actividades {
     display: flex;
     align-items: center;
@@ -163,7 +213,7 @@
     padding: 5px 30px;
 }
 .tabela-actividades {
-    height: 80vh;
+    height:400px;
     overflow: auto;
     min-height: calc(89% - 2rem);
     width: 95%;
@@ -267,12 +317,24 @@
     right: 0;
     left: 0;
     bottom: 0;
-    overflow: hidden;
+    overflow: auto;
 }
+.itens-estatistica::-webkit-scrollbar{
+    width: 8px;
+    height: 8px;
+}
+.itens-estatistica::-webkit-scrollbar-thumb{
+   visibility: hidden;
+   background-color: #0004;
+   border-radius: 8px;
+}
+.itens-estatistica:hover::-webkit-scrollbar-thumb{
+    visibility: visible;
+ }
 .dashboard-estatistica {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
-    width: 90%;
+    width: 100%;
     margin: 10px auto 0 auto;
 }
 .itens-estatistica .titulo-geral {
@@ -532,4 +594,33 @@ ul .imagem-perfil img {
     display: block;
     position: absolute;
     border-radius: 10px;
+}
+@media screen and (max-width:1200px){
+    .dashboard-estatistica {
+        grid-template-columns: 1fr 1fr 1fr;
+        width: 100%;
+
+    }
+
+}
+@media screen and (max-width:768px){
+    .dashboard-estatistica {
+        grid-template-columns: 1fr  1fr;
+        gap: .5em;
+        width: 100%;
+    }
+    .actividades{
+        margin-top: 100px;
+    }
+    .actividades .dashboard{
+        grid-template-columns: 1fr;
+        width: 100%;
+        display: none;
+    }
+    .list-dash{
+        display: none;
+    }
+    .dashboard .planificadas {
+        width: 100%;
+    }
 }

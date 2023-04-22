@@ -1,4 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Poppins:wght@300;400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Josefin+Slab:ital,wght@0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600&family=Poppins:wght@300;400;500;600;700;800&display=swap');
 :root{
     --color-primary: #7380ec;
     --color-danger: #ff7782;
@@ -28,12 +30,15 @@
     appearance: none;
     outline: none;
     border: none;
-    font-family: poppins,sans-serif;
+    font-family:sans-serif;
 }
 body{
     width: 100vw;
     height: 100vh;
     background: #fafbfc;
+}
+.dark {
+    color: var(--color-dark);
 }
 .warning{
     color:var(--color-warning);
@@ -45,6 +50,7 @@ body{
     color: var(--color-primary);
 }
 body{
+    height: 100vh;
     user-select: none;
     overflow-x: hidden;
 }
@@ -136,7 +142,7 @@ ul {
     justify-content: space-between;
 }
 aside {
-    background: #111827;
+    background: #fafbfc;
     box-shadow: 0 2rem 3rem (0,0,0,1);
 }
 aside .sidebar {
@@ -153,7 +159,7 @@ aside .sidebar a {
     height: 3.7rem;
     gap: 1rem;
     margin-left: 1rem;
-    font-family: 'Poppins',sans-serif;
+    font-family: sans-serif;
     background: '';
 }
 aside .sidebar a.active{
@@ -192,9 +198,15 @@ aside .sidebar a span {
     justify-content: space-between;
     padding: 4px 10px;
 }
+.dado-none{
+    display: none;
+}
 /*==========ESTERLIZANDO A MAIN DA DASHBOARD==========*/
 main h1, main .date{
    margin-left: 1rem;
+}
+.abrir-menu{
+    display: none;
 }
 .date{
     display: inline-block;
@@ -265,15 +277,21 @@ margin-bottom: -10px;
     left: 0;
     right: 0;
     bottom: 0;
-    overflow: hidden;
-  
+    overflow: auto;
     backdrop-filter: blur(7px);
+}
+.registo-financeiro::-webkit-scrollbar{
+    width: 8px;
+    height: 8px;
+}
+.registo-financeiro::-webkit-scrollbar-thumb{
+    background-color: #0004;
 }
 .tabela-financas {
     width: 93%;
-    height: 80vh;
+    height: 70vh;
     margin: 0 auto 0 auto;
-    max-height: calc(89% - 2rem);
+    max-height: calc(89% - 2em);
     overflow: auto;
 }
 .tabela-financas table {
@@ -319,7 +337,7 @@ margin-bottom: -10px;
     margin-left: 4rem;
     background: transparent;
 }
-.registo-financeiro .configuracoes-planos .add-plano-fin a{
+.registo-financeiro .configuracoes-planos .add-plano-fin {
     display: flex;
     align-items: center;
     gap: 1rem;
@@ -330,7 +348,7 @@ margin-bottom: -10px;
     color: #323232;
     transition: .5s ease-in-out;
 }
-.registo-financeiro .configuracoes-planos .add-plano-fin a:hover{
+.registo-financeiro .configuracoes-planos .add-plano-fin:hover{
     background: var(--color-primary);
 }
 .registo-financeiro .configuracoes-planos .campo-pesquisa input[type='submit']{
@@ -422,15 +440,15 @@ margin-bottom: -10px;
     height: 30px;
     border-radius: 50%;
 }
+
 .aniversariantes-edit{
+    height: 150px;
     gap: .5rem;
-    background: var(--color-white);
-    border-radius: var(--border-radius-2);
-    box-shadow: 2px 2px 12px rgba(0, 0, 0, .2);
     margin: .5rem;
     gap: 1rem;
     padding: 10px 10px;
     position: relative;
+    overflow: auto;
 }
 .aniversariantes-edit button {
     width: 100%;
@@ -438,7 +456,7 @@ margin-bottom: -10px;
 .aniversariantes-edit button a {
     color: #fff;
 }
-.aniversariantes-edit .notificao-aniversariantes{
+.notificao-aniversariantes{
     width: 30px;
     height: 30px;
     border-radius: 50%;
@@ -447,7 +465,7 @@ margin-bottom: -10px;
     top: -10px;
     left: -10px;
 }
-.aniversariantes-edit .notificao-aniversariantes h4{
+.aniversariantes-card .notificao-aniversariantes h4{
     display: flex;
     justify-content: center;
     color: #fff;
@@ -459,12 +477,27 @@ margin-bottom: -10px;
     gap: 1rem;
 }
 .aniversariantes-card{
+    background: var(--color-white);
+    border-radius: var(--border-radius-2);
+    box-shadow: 2px 2px 12px rgba(0, 0, 0, .2);
     margin-top: .6rem;
+    position: relative;
 }
 .aniversariantes-card h3:first-child{
     text-align: center;
     margin-top: 1rem;
     margin-bottom: .3rem;
+}
+.notificacoes .t-aniversario{
+    text-align: center;
+    margin-top: 40px;
+}
+.aniversariantes-card .f-aniversario{
+    width: 100%;
+    padding: 0.1rem;
+    margin: 6px;
+    color: #fff;
+    font-size: .9rem;
 }
 /*=======RESUMO DE OFERTAS=========*/
 .ofertas span img{
@@ -473,6 +506,27 @@ margin-bottom: -10px;
     border-radius: 50%;
     background: var(--color-sucess);
     padding: 0.4rem;
+}
+.btn-receita span img{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: var(--color-sucess);
+    padding: 0.4rem;
+}
+.btn-receita {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    background: transparent;
+    box-shadow: var(--box-shadow);
+    border-radius: var(--border-radius-3);
+    padding: 0.4rem 2rem;
+    margin-bottom: .5rem;
+    border: 3px dashed var(--color-primary);
+}
+.btn-receita h3 {
+    font-size: 1.3rem;
 }
 .ofertas-mensais {
     margin-top: 1rem;
@@ -490,10 +544,6 @@ margin-bottom: -10px;
     border-radius: var(--border-radius-3);
     padding: 0.4rem 2rem;
     margin-bottom: .5rem;
-}
-.ofertas-mensais .inserir{
-    background: transparent;
-    border: 2px dashed var(--color-primary);
 }
 .ofertas-mensais .inserir span img{
     background: var(--color-danger);
@@ -684,6 +734,10 @@ footer ul li{
     margin: .8rem auto;
     overflow: auto;
 }
+.lista-membros .dado-none, 
+.tabela-actividades .dado-none{ 
+    display: none;
+}   
 .lista-membros thead th{
     position: sticky;
     top: 0;
@@ -692,6 +746,7 @@ footer ul li{
 .lista-membros table thead th {
     background: #0084FF;
     color: #fff;
+    text-align: left;
 }
 .lista-membros table {
     width: 100%;
@@ -715,6 +770,7 @@ footer ul li{
         /*min-width: 14.2rem;*/
     }
 }
+
 table, th, td{
     padding: 1rem;
     border-collapse: collapse;
@@ -731,7 +787,24 @@ table tr:hover{
     justify-content: center;
     align-items: center;
 }
-.add-membro a {
+.impressao-fase {
+    display: flex;
+}
+.impressao-fase a{
+    display: flex;
+    margin-left: 10px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
+    padding: 5px;
+    background: #fafbfc;
+    border: 1px solid #ccc;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, .2);
+}
+.edicao-lista .btn-listar{
+    border: 1px solid #ccc;
+}
+.add-membro  {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -767,7 +840,9 @@ table tr:hover{
     border-radius: 6px;
     transition:.5s ease-in-out;
 }
-
+.actividadeProcura {
+    margin-left: 20px;
+}
 .procurar select{
     height: 35px;
     width: 200px;
@@ -799,23 +874,70 @@ table tr:hover{
 }
 /*=========ESTERLIZAÇÃO DA PARTE DE CADASTRO===========*/
 .caixa-informacao{
+    width: 100vw;
+    height: 100vh;
+    z-index: 2000;
+    position:fixed;
+    display:flex;
+    justify-content: center;
+    background: rgba(0,0,0,.5);
+    display: none;
+}
+
+.caixa-informacao.mostrar{ 
+    display:flex;
+}
+.caixa-informacao form{
     background: #fff;
     max-width: 500px;
     height: 95vh;
-    padding: 20px;
-    margin: 80px auto 30px auto;
-    border-radius: 10px;
     box-shadow: 0 0 20px rgba(0, 0, 0, .2);
     overflow: hidden;
-    position:absolute;
-    top:0;
-    left: 0;
-    right: 0;
-    bottom: 0;
+    margin-top: 20px;
+    border-radius: 10px;
+    position: relative;
 }
-.caixa-informacao form{
+@keyframes modal {
+    from{
+        opacity: 0;
+        transform: translate3d(0,-60px,0);
+    }
+    to {
+        opacity: 1;
+        transform: translate3d(0,0,0);
+    }
+
+}
+.caixa-informacao.mostrar form{
+    animation: modal .3s;
+}
+.caixa-informacao .cadastro-membro{
+    height: 95vh;
+    padding: 20px;
     display: flex;
     flex-direction: column;
+    overflow: auto;
+}
+.formMembro .botao-fechar{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: #0084FF;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+    position: absolute; 
+    right: -4px;
+    top: -5px;
+ }
+.caixa-informacao .cadastro-membro::-webkit-scrollbar{
+    width: 8px;
+    height: 8px;
+}
+.caixa-informacao .cadastro-membro::-webkit-scrollbar-thumb{
+    border-radius: 10px;
+    background: #0004;
 }
 .caixa-informacao form .info input, .caixa-informacao select {
     width: 100%;
@@ -824,7 +946,8 @@ table tr:hover{
     padding:3px 10px;
     border-radius: 5px;
     margin-bottom: 10px;
-    border: 1px solid #ccc;
+    border:none;
+    border-bottom: 1px solid #ccc;
     outline: none;
 }
 .caixa-informacao .nomes{
@@ -837,7 +960,7 @@ table tr:hover{
     margin-left: 10px;
 }
 .caixa-informacao form input:focus {
-    border:2px solid #0084FF;
+    border-bottom:2px solid #0084FF;
 }
 .caixa-informacao form .info label {
     font-family: Arial, Helvetica, sans-serif;
@@ -916,89 +1039,40 @@ table td .img-perfil{
     background: linear-gradient(135deg,  #6C63FF, #0084FF);
 }
 /*================TELA DE HOME E LOGIN===============*/
-.container-login {
-    width: 100%;
-    height: 100vh;
-    background: #fff;
-}
-.container-login .logo{
-    width: 80%;
-    margin: 0 auto 0 auto;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1rem;
-}
-.container-login .container-1{
-    width: 80%;
-    margin: 50px auto 0 auto;
-}
-.container-login .logo .menu ul{
-    display: flex;
-}
-.container-login .logo .menu ul li a{
-   padding: .4rem;
-   background: #F9A826;
-   border-radius: 5px;
-   color: #fff;
-}
-.container-login .logo .menu ul li .login{
-   padding: .4rem;
-   background: transparent;
-   border-radius: 5px;
-   color: #000;
-   border: 1px solid #111827;
-}
-.container-1 {
-   
-}
 .container-2 {
     display: flex;
     background: #fff;
+    width: 450px;
+    padding: 1.5rem .5rem 1.3rem .5rem;
+    margin: 60px auto auto auto;
     border-radius: var(--card-border-radius);
     box-shadow: var(--box-shadow);
 }
-.container-2 .lado-A {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 50%;
-    background:  #111827;
-    border-radius: var(--card-border-radius);
-}
-.container-2 .lado-B {
-    position: relative;
-    margin-top: 20px;
-    width: 50%;
-}
-.container-login .container-2 .lado-A img{
-    width: 400px;
-    height: 400px;
-}
-.container-2 .lado-B form .full-box{
+
+.container-2 form .full-box{
     display: flex;
     flex-direction: column;
     margin-bottom: 30px;
 }
-.container-2 .lado-B form .full-box label{
+.container-2 form .full-box label{
     margin-bottom: 10px;
 }
-.container-2 .lado-B form input[type="submit"]{
-  background: linear-gradient(135deg,#111827, #7380EC);
+.container-2 form input[type="submit"]{
+  background: #0084FF;
   height: 30px;
   border-radius: 6px;
   color: #fff;
   font-size: 1.2rem;
 }
-.container-2 .lado-B form {
+.container-2 form {
     width: 350px;
     margin: 0 auto 0 auto;
 }
-.container-2 .lado-B h1 {
+.container-2 h1 {
     text-align: center;
-    font-family: 'Poppins',sans-serif;
+    font-family: sans-serif;
 }
-.container-2 .lado-B .img-login {
+.container-2 .img-login {
     width: 80px;
     height: 80px;
     background: #7380EC;
@@ -1007,14 +1081,21 @@ table td .img-perfil{
     padding: 0.5rem;
     margin: -50px auto 40px auto;
 }
-.container-2 .lado-B .redes-sociais {
+.container-2 input {
+    border: none;
+    border-bottom: 1px solid #ccc;
+}
+.container-2 input:focus {
+    border-bottom: 2px solid #0084FF;
+}
+.container-2 .redes-sociais {
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 1rem;
     margin-bottom: 2rem;
 }
-.container-2 .lado-B .redes-sociais img {
+.container-2 .redes-sociais img {
     width: 40px;
     height: 40px;
     padding: 0.4rem;
@@ -1022,7 +1103,7 @@ table td .img-perfil{
     border-radius: 50%;
   
 }
-.container-2 .lado-B h3{
+.container-2 h3{
     color: var(--color-dark-variant);
     text-align: center;
     margin-bottom: 1rem;
@@ -1033,17 +1114,16 @@ table td .img-perfil{
     position: relative;
     width: 350px;
     height: 30px;
-    border: 2px solid #ccc;
     border-radius: 6px;
 }
-.container-2 .lado-B .input-img input{
+.container-2 .input-img input{
     position: absolute;
     width: 100%;
     height: 100%; 
     padding: 0 15px 0 45px;
     border-radius: 6px;
 }
-.container-2 .lado-B .input-img img{
+.container-2 .input-img img{
     position: absolute;
     width: 18px;
     height: 18px;
@@ -1052,6 +1132,198 @@ table td .img-perfil{
     z-index: 2;
     transform: translateX(-50%);
 
+}
+/*=========VAMOS ESTERLIZAR A PARTE PRINCIPAL DO SITE===========*/
+.container-home .cabecalho{
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+    padding: 2rem;
+}
+.cabecalho .logo{
+    margin-right: 200px;
+}
+.cabecalho .logo span{
+    color: #0084FF;
+    text-decoration: overline;
+    font-size: 3rem;
+}
+.container-home .cabecalho {
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+    padding: 2rem;
+}
+.text-biblico {
+    font-family: 'Josefin Slab', sans-serif;
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+.container-home .menu ul li + li {
+    margin-left: 30px;
+}
+
+.container-home .menu li a{
+    font-size: 1.2rem;
+    padding:.1rem 1rem .1rem 1rem;
+    border-radius: 6px;
+    transition: .8s ease-in-out;
+}
+.container-home .menu li a:hover{
+    background: #0084FF;
+    color: #fff;
+}
+.container-home h1,
+.container-home h2,
+.container-home h3{
+    font-family:'Poppins', sans-serif;
+}
+.menu .login a{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    background: #0084FF;
+    border: 2px solid #0084FF;
+    border-radius: 6px;
+    padding:0 1rem 0 1rem;
+}
+.menu .login:hover a{
+    background: transparent;
+}
+.menu .login:hover{
+    color: #323232;
+    background: #fff;
+ 
+}
+.menu .login a{
+    color: #fff;
+    font-size: 1.2rem;
+    font-family:'Poppins', sans-serif;
+}
+.container-A{
+
+}
+.container-B{
+    display: flex;
+}
+.container-B .lado-1{
+    width: 50%;
+    padding: 15rem 0 10rem 15rem;
+} 
+.lado-1 h3{
+    color: #323232;
+    font-size: 1.3rem;
+}
+.lado-1 h1 {
+    margin-top: 10px;
+    font-size: 2rem;
+}
+.lado-1 p {
+    margin-top: 15px;
+}
+.lado-1 .redes-sociais ul{
+    margin-top: 30px;
+    display: flex;
+}
+.lado-1 span{
+    color:#0084FF;
+}
+.lado-1 .redes-sociais li{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #fff;
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    box-shadow: 2px 2px 12px rgba(0, 0, 0, .2);;
+    transition: .8s ease-in-out;
+}
+.lado-1 .redes-sociais li:hover {
+    background: #0084FF;
+
+   
+}
+.lado-1 .redes-sociais li:hover i {
+    color: #fff;
+   
+}
+.lado-1 .redes-sociais li + li{
+    margin-left: 10px;
+} 
+.lado-1 button {
+    font-size: 1.3rem;
+    margin-top: 45px;
+    border: 1px solid #0084FF;
+    width: 200px;
+    height: 35px;
+    border-radius: 10px;
+    color: #fff;
+    background: #0084FF;
+    box-shadow: 2px 2px 12px rgba(0, 0, 0, .2);
+    transition: .8s ease-in-out;
+}
+.lado-1 button:hover {
+    border: 2px solid #0084FF;
+    color: #323232;
+    cursor: pointer;
+    background: #fff;
+}
+.lado-2 .imagem01 img{
+    width: 600px;
+    height: 600px;
+    border-radius: 50%;
+    box-shadow: var(--box-shadow);
+}
+/*==============ESTERLIZANDO A PARTE DE SIGLE ACTIVIDADE=================*/
+.single-actividade{
+    width: 600px;
+    margin: 80px auto 0 auto;
+    border-radius: var(--card-border-radius);
+    box-shadow: var(--box-shadow);
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: 2rem;
+    overflow: auto;
+}
+.single-actividade::-webkit-scrollbar{
+    width: 8px;
+    height: 8px;
+}
+.single-actividade::-webkit-scrollbar-thumb{
+    background: #0004;
+    border-radius: 10px;
+    visibility: hidden;
+}
+.single-actividade:hover::-webkit-scrollbar-thumb{
+    visibility: visible;
+}
+.single-actividade .actividade{ 
+    display: flex;
+    flex-direction: column;
+}
+.single-actividade .actividade h2{ 
+    color: var(--color-info-dark);
+    font-size: 1.2rem;
+}
+.single-actividade .actividade h3{ 
+    padding: 5px 10px;
+    margin-bottom: 8px;
+    margin-left: 10px;
+    font-size: 1rem;
+    color: #323232;
+}
+.single-actividade .data-de-cadastro {
+    margin-bottom: 10px;
+}
+.single-actividade .actividade .cabecalho{ 
+    display: flex;
+    align-items: center;
+    gap: .5rem;
 }
 /*=======MÉDIA QUERYS PARA O SISTEMA COMPLETO=======*/
 @media screen and (max-width:1200px){
@@ -1077,6 +1349,9 @@ table td .img-perfil{
     }
     .container main .itens-dashboard{
         grid-template-columns: 1fr;
+    }
+    .registo-financeiro .financa-cabecalho{
+        display: none;
     }
     .notificacoes {
         grid-template-columns: 1fr;
@@ -1113,10 +1388,10 @@ table td .img-perfil{
         display: flex;
     }
     /*===PARTE DA APRESENTAÇÃO DE MEMBROS===*/
-    .configuracoes-membros .add-membro a span {
+    .configuracoes-membros .add-membro  span {
         display: none;
     }
-    .configuracoes-membros .add-membro a {
+    .configuracoes-membros .add-membro  {
         width: 40px;
         height: 40px;
         border-radius: 50%;

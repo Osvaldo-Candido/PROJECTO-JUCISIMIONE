@@ -5,7 +5,7 @@ use App\Libraries\Database\Database;
 
 class Persist extends Database {
 
-    private string $query;
+    private $query;
 
     public function query(string $query)
     {
@@ -22,28 +22,40 @@ class Persist extends Database {
                     break;
                 case is_bool($valor):
                     $tipo = \PDO::PARAM_BOOL;
-                default:
-                    $tipo = \PDO::PARAM_STR;
-                    break;
+                    case is_null($valor):
+                        $tipo = \PDO::PARAM_NULL;
+                        break;
+                    default:
+                        $tipo = \PDO::PARAM_STR;
             }
         }
 
-        $this->query($parametro,$valor,$tipo);
+        $this->query->bindParam($parametro,$valor,$tipo);
     }
 
-    public function execute()
+    public function executa()
     {
-        $this->query->execute();
+      return  $this->query->execute();
     }
 
     public function select()
     {
-        $this->execute();
-        return $this->query->fetch(\PDO::FETCH_ASSOC);
+        $this->executa();
+        return $this->query->fetch(\PDO::FETCH_OBJ);
+    }
+    public function selectPdf()
+    {
+        $this->executa();
+        return $this->query->fetchAll(\PDO::FETCH_ASSOC);
+    }
+    public function selectColum()
+    {
+        $this->executa();
+        return $this->query->fetchColumn();
     }
     public function selectAll()
     {
-        $this->execute();
-        return $this->query->fetchAll(\PDO::FETCH_ASSOC);
+        $this->executa();
+        return $this->query->fetchAll(\PDO::FETCH_OBJ);
     }
 }

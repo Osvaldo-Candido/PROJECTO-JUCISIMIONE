@@ -2,6 +2,7 @@
 namespace App\Controllers;
 
 use App\Models\ModelMembro;
+use FontLib\Table\Type\head;
 use Src\Classes\RoutesViews;
 
 class LoginController extends RoutesViews {
@@ -17,8 +18,12 @@ class LoginController extends RoutesViews {
     }
     public function viewNovaSenha()
     {
-        $chave_trocar = $_GET['chave'];
+        $chave_trocar = filter_input(INPUT_GET,'chave',FILTER_DEFAULT);
         $this->renderizarLogin('Login/NovaSenha',$chave_trocar);
+    }
+    public function viewPerfil()
+    {
+        $this->renderizarUsuario('dashboard/CadastroLivre/PerfilMembro');
     }
 
     public function recuperarSenha()
@@ -32,7 +37,8 @@ class LoginController extends RoutesViews {
         {
 
         }else{
-
+            $_SESSION['erro_login'] = 'Email não cadastrado';
+            header('Location:'.DIRPAGE."login\viewRecuperarSenha");
         }
     }
     public function viewLogin()
@@ -45,7 +51,22 @@ class LoginController extends RoutesViews {
         $chave_recuperacao = trim($usuario['nova_chave']);
         $nova_senha = trim($usuario['nova_senha']);
         $class = new ModelMembro();
-        $class->trocarSenha($chave_recuperacao,$nova_senha);
+        if(strlen($nova_senha) >= 8)
+        {
+            $class->trocarSenha($chave_recuperacao,$nova_senha);
+            if($class->getResultado())
+            {
+                header('Location:'.DIRPAGE.'login\viewLogin');
+            }else{
+                $_SESSION['msg_rec'] = "Tente novamente";
+                header('Location:'.DIRPAGE.'login\viewNovaSenha');
+            }
+
+        }else{
+            $_SESSION['msg_rec'] = "A senha deve ter no minímo 8 digítos";
+            header('Location:'.DIRPAGE.'login\viewNovaSenha');
+        }
+        
 
     }
 

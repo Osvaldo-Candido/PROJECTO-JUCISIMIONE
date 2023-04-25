@@ -357,9 +357,9 @@ public function imprimirPdf()
     }
     public function terminarSessao()
     {
-        if(isset($_SESSION['nome']) && isset($_SESSION['cargo']) && isset($_SESSION['id_unico'])){
+        if(isset($_SESSION['nome']) && isset($_SESSION['categoria']) && isset($_SESSION['id_unico'])){
             unset($_SESSION['nome']);
-            unset($_SESSION['cargo']);
+            unset($_SESSION['categoria']);
             unset($_SESSION['id_unico']);
             header('Location:'.DIRPAGE.'login\index');
         }

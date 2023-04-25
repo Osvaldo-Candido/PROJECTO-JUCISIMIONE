@@ -50,5 +50,21 @@ class RoutesViews{
             echo "O ficheiro não existe AQUI";
         }
     }
+    public function renderizarUsuario($view,$dados = null )
+    {
+        $this->dados = $dados;
+        $this->view = $view;
+
+        $ficheiro = DIRREQ."app/views/".$this->view.".php";
+        
+        if(file_exists($ficheiro))
+        {       
+            require_once DIRREQ."app/views/dashboard/CadastroLivre/header.php";
+            require_once $ficheiro;
+            require_once DIRREQ."app/views/dashboard/CadastroLivre/footer.php";
+        }else{
+            echo "O ficheiro não existe AQUI";
+        }
+    }
 
 }

@@ -37,14 +37,13 @@ class AlbumController extends RoutesViews {
     public function adicionarImagem()
     {
         $class = new ModelAlbum();
-        var_dump($_FILES['foto']);
 
         $image_name = $_FILES['foto']['name'];
         $tmp_name = $_FILES['foto']['tmp_name'];
         $image_explode = explode('.',$image_name);
         $image_ext = end($image_explode);
 
-            $extension = ['jpg','png','jpeg'];
+            $extension = ['jpg','png','jpeg','JPG','PNG','JPEG'];
             if(in_array($image_ext, $extension) === true)
             {
                 $time = time();

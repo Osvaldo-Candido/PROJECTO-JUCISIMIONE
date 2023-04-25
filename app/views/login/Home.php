@@ -22,7 +22,7 @@
                         <li><a href="#"><i class="fa-brands fa-twitter fa-2xl"></i></a></li>
                     </ul>
                 </div>
-                <button>Saiba+</button>
+                <button><a href="<?=DIRPAGE?>login\viewPerfil"> Cadastra-se</a></button>
             </div>
             <div class="lado-2">
                 <div class="imagem01">

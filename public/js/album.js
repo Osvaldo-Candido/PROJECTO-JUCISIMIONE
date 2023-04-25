@@ -30,15 +30,11 @@ $("#formFotos").submit(function(e){
       success: function(mensagem) {
         // Se o membro foi adicionado com sucesso, exibe uma mensagem de alerta
         if(mensagem == "Inserido com sucesso") {
+          window.alert('Inserido com sucesso');
           resetForm();
           fecharModal();
           getAlbum();
-        }
-        if(mensagem == "Editado com sucesso"){
-          resetForm();
-          fecharModal();
-          getAlbum();
-        } else {
+        }else {
           // Se houve algum erro, exibe a mensagem de erro na tela
           $('.erro-text').css('display', 'block');
           $('.erro-text').html(mensagem);
@@ -73,7 +69,7 @@ setInterval(getAlbum,5000);
  } 
    // Função para limpar os campos do formulário após a adição do membro
    function resetForm() {
-       $('#formPlano')[0].reset();
+       $('#formFotos')[0].reset();
        $('.erro-text').css('display', 'none');
    }
 

@@ -616,6 +616,22 @@ main .programa-trimestral {
     text-align: center;
     padding: .8rem .1rem;
 }
+.escala-usuario .programa-trimestral{
+    width: 80%;
+    height: 70vh;
+    background: #fff;
+}
+.escala-usuario .escala-obreiros{
+    text-align: center;
+}
+.escala-usuario{
+    margin-top: -10px;
+}
+.escala-usuario .thead-usuario th{
+   background-color: #0084FF;
+   color: #fff;
+}
+
 .programa-trimestral .t-body {
     width: 98%;
     max-height: calc(89% - 1rem);
@@ -1043,12 +1059,14 @@ table td .img-perfil{
     display: flex;
     background: #fff;
     width: 450px;
-    padding: 1.5rem .5rem 1.3rem .5rem;
+    padding: 2rem .5rem 2rem .5rem;
     margin: 60px auto auto auto;
     border-radius: var(--card-border-radius);
     box-shadow: var(--box-shadow);
 }
-
+.container-2  h1{
+    margin-bottom: 30px;
+}
 .container-2 form .full-box{
     display: flex;
     flex-direction: column;
@@ -1063,6 +1081,7 @@ table td .img-perfil{
   border-radius: 6px;
   color: #fff;
   font-size: 1.2rem;
+  margin-top: 20px;
 }
 .container-2 form {
     width: 350px;
@@ -1070,7 +1089,10 @@ table td .img-perfil{
 }
 .container-2 h1 {
     text-align: center;
-    font-family: sans-serif;
+    font-family:'Poppins', sans-serif;
+    font-weight: 300;
+    font-size: 1.8rem;
+
 }
 .container-2 .img-login {
     width: 80px;
@@ -1084,6 +1106,11 @@ table td .img-perfil{
 .container-2 input {
     border: none;
     border-bottom: 1px solid #ccc;
+    font-size: 1rem;
+}
+.container-2 label a {
+    color: #0084FF;
+    font-size: 1rem;
 }
 .container-2 input:focus {
     border-bottom: 2px solid #0084FF;
@@ -1168,6 +1195,10 @@ table td .img-perfil{
     padding:.1rem 1rem .1rem 1rem;
     border-radius: 6px;
     transition: .8s ease-in-out;
+}
+.container-home .menu .home{
+    font-size: 1.2rem;
+    font-weight: bold;
 }
 .container-home .menu li a:hover{
     background: #0084FF;

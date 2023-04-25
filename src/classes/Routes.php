@@ -22,7 +22,8 @@ class Routes {
             'estatistica' => 'EstaticaController',
             'financas' => 'FinancasController',
             'login' => 'LoginController',
-            'album' => 'AlbumController'
+            'album' => 'AlbumController',
+            'membro' => 'MembroController'
         ];
 
         if(array_key_exists($controller, $routes))
@@ -30,11 +31,13 @@ class Routes {
         
             if(file_exists(DIRREQ.'app/controllers/'.$routes[$controller].'.php'))
             { 
-              if(isset($_SESSION['nome']) && isset($_SESSION['cargo']) && isset($_SESSION['id_unico'])){
+              if(isset($_SESSION['nome']) && ($_SESSION['categoria'] == 'Administrador Geral') && isset($_SESSION['id_unico'])){
                     return $routes[$controller];
-                 }else{
-                 return $routes['login'];
-               }
+              }elseif(isset($_SESSION['nome']) && ($_SESSION['categoria'] == 'Nenhum') && isset($_SESSION['id_unico'])){
+                return 'MembroController';
+              }else{
+                    return $routes['login'];
+              }
             }else{
                     echo "O ficheiro não existe";
             }

@@ -9,7 +9,7 @@
         </div>
     </div>
 
-    <div class="container-2">
+    <div class="container-album">
         <div class="imagens">
             <!------- ESPAÇO PARA IMEGENS -------->
         </div>

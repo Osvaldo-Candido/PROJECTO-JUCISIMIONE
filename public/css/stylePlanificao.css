@@ -369,7 +369,7 @@
     grid-template-columns: 100%;
     grid-template-areas: 
     "container-search"
-    "container-2";
+    "container-album";
     min-height: 100vh;
     position: fixed;
     background: #fafbfc;
@@ -386,7 +386,7 @@
 .container-search {
     grid-area:container-search;
     position: fixed;
-    background: #fff;
+    background: #fafbfc;
     width: 100%;
     margin: -40px auto 10px -20px;
     padding: 0px 0;
@@ -402,12 +402,17 @@
     margin-top: 10px;
   
 }
-.container-2{
-    grid-area: container-2;
+.container-album{
+    grid-area: container-album;
     background: #fafbfc;
-    margin-top: 20px;
     box-shadow: var(--box-shadow);
+    overflow: auto;
  
+}
+.container-album::-webkit-scrollbar{
+    width:8px;
+    height: 8px;
+    background: #0004;
 }
 .search-box input{
     position: absolute;
@@ -466,6 +471,7 @@
     flex-wrap: wrap;
     justify-content: center;
     position: relative;
+    margin-top: 40px;
 }
 /*ADICIONAR FOTO*/
 .add-imagem{

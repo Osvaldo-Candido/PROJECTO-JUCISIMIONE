@@ -55,7 +55,7 @@ class ModelMembro extends Persist {
             if(password_verify($senha,$usuario->senha))
             {
                 $_SESSION['nome'] = $usuario->nome;
-                $_SESSION['cargo'] = $usuario->cargo;
+                $_SESSION['categoria'] = $usuario->categoria;
                 $_SESSION['id_unico'] = $usuario->id_unico;
                 $this->resultado = true;
             }else{
@@ -113,16 +113,16 @@ class ModelMembro extends Persist {
                 para dar continuidade click aqui".$link."Se não solicitou nenhuma acção é necessária";
             
                 $mail->send();
-                header('Location:'.DIRPAGE."login");
+                header('Location:'.DIRPAGE."login\viewLogin");
             } catch (Exception $e) {
                 echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
             }
             }else{
-                $this->resultado = false;
+                header('Location:'.DIRPAGE."login\viewRecuperarSenha");
             }
         
         }else{
-            echo "Email não cadastrado";
+            $this->resultado = false;
         }
     }
     //TROCAR DE SENHA DO USUÁRIO
@@ -154,7 +154,9 @@ class ModelMembro extends Persist {
                     $this->bind(':id',$usuario->idMembro);
                     if($this->executa())
                     {
-                      echo "Senha alterada e aquela cena apagada";
+                     $this->resultado = true;
+                    }else{
+                        $this->resultado = false;
                     }
                 }else{
                     $this->resultado = false;
@@ -165,6 +167,7 @@ class ModelMembro extends Persist {
         }else{
             echo "Email não cadastrado";
         }
+        
     }
     public function procurarMembros($nome)
     {
@@ -258,10 +261,10 @@ class ModelMembro extends Persist {
     {
             $query = "INSERT INTO membro (idMembro,id_unico,nome,pai,mae,nascimento,nacionalidade,
             provincia,municipio,documento,numDocumento,sexo,contacto,estado,batismo,local,cargo,funcao,
-            categoria,email,senha,dataCriacao,admin,formacao,biografia) VALUES 
+            categoria,email,senha,dataCriacao,admin,formacao,biografia,recuperar_senha) VALUES 
             (NULL,:id_unico,:nome,:pai,:mae,:nascimento,:nacionalidade,
             :provincia,:municipio,:documento,:numDocumento,:sexo,:contacto,:estado,:batismo,:local,:cargo,:funcao,
-            :categoria,:email,:senha,NOW(),:admin,:formacao,:biografia)";
+            :categoria,:email,:senha,NOW(),:admin,:formacao,:biografia,NULL)";
             $this->query($query);
             $this->bind(':id_unico',$id_unico);
             $this->bind(':nome',$nome);
@@ -285,7 +288,7 @@ class ModelMembro extends Persist {
             $this->bind(':senha',$senha);
             $this->bind(':formacao',$formacao);
             $this->bind(':biografia',$biografia);
-           // $this->bind(':admin',$_SESSION['nome']);
+           $this->bind(':admin',$_SESSION['nome']);
     
             if($this->executa()){
                 $this->resultado = true;
